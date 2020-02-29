@@ -10,4 +10,4 @@ As of February 21st, the following technology stack is being used or is taken in
 * Podman
 * Vagrant with VirtualBox
 
-Additionally, this thesis will also research the feasibility to replace Docker with an alternative like Red Hat's Podman.
+Additionally, this thesis will also research the feasibility to replace Docker with an alternative like Red Hat's Podman. While both drivers are relatively "easy" to install (I had some installation issues with both drivers on Pop!OS), podman requires additional configuration in order to use it on a non-root account, which is in fact Podman's trademark. 
