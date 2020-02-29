@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/RobinOphalvens/AnsibleTestingLab.svg?branch=master)](https://travis-ci.org/RobinOphalvens/AnsibleTestingLab)
+
 # AnsibleTestingLab
 This repository will act as a testing ground for my bachelor thesis where I will be looking for a workflow that improves the Ansible role testing experience. The goal is to set up a Travis CI system that can automatically build a Docker or Podman container with the necessary dependencies, instead of having to manually configure a Dockerfile with a standard shell script.
 
