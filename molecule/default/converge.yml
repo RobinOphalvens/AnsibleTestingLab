@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include dockerrole"
+      include_role:
+        name: "AnsibleTestingLab"
