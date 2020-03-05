@@ -5,26 +5,20 @@ driver:
   name: docker
 platforms:
   - name: centos7
-    image: "geerlingguy/docker-centos7-ansible:latest"
+    image: "percygrunwald/docker-centos7-ansible:latest"
     command: ""
     volumes: 
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     pre_build_image: true
-#  - name: ubuntu1804
-#    image: "geerlingguy/docker-ubuntu1804-ansible:latest"
-#    command: ""
-#    volumes: 
-#      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-#    privileged: true
-#    pre_build_image: true
-#  - name: debian9
-#    image: "percygrunwald/docker-debian9-ansible:latest"
-#    volumes: 
-#      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-#    privileged: true
-#    pre_build_image: true
+  - name: fedora29
+    image: "percygrunwald/docker-fedora29-ansible:latest"
+    command: ""
+    volumes: 
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
 provisioner:
   name: ansible
 verifier:
-  name: ansible
+  name: testinfra
