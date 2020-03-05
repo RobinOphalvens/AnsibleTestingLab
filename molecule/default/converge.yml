@@ -2,6 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include ansible-role-https"
+    - name: "Include AnsibleTestingLab"
       include_role:
-        name: "ansible-role-https"
+        name: "AnsibleTestingLab"
