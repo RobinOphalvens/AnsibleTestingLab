@@ -1,7 +1,2 @@
-# roles/httpd/handlers/main.yml
 ---
-
-- name: restart httpd
-  service:
-    name: httpd
-    state: restarted
+# handlers file for ansible-apache
