@@ -1,0 +1,10 @@
+---
+#vars file for Debian/Ubuntu machines
+#
+package_list:
+  - python3-apt
+  - apache2
+  - ufw
+service_list:
+  - apache2
+  - ufw

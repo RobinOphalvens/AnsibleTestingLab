@@ -1,4 +1,12 @@
 ---
+#Determine OS type and family
+- name: Source specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+  tags: httpd,pretask
+
 # tasks file for ansible-apache
 - name: "Ensure required packages are present"
   yum:
@@ -18,8 +26,23 @@
   with_items: "{{ service_list }}"
 
 - name: "Whitelist http in firewalld"
+  when: ansible_facts['os_family'] == "RedHat"
   firewalld:
     service: http
     state: enabled
     permanent: true
     immediate: true
+
+#- name: "Debian - Enable UFW"
+#  when: ansible_facts['os_family'] == "Debian"
+#  ufw:
+#    state: enabled
+
+
+- name: "Whitelist http in ufw"
+  when: ansible_facts['os_family'] == "Debian"
+  ufw:
+    rule: allow
+    name: WWW
+
+
